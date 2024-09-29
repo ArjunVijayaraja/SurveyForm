@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>SUrveyForm</title>
+    <style>
+        body{
+            padding: 0px 50px;
+        }
+
+        h4{
+            margin: 8px;
+        }
+        #mainContainer {
+            display: grid;
+            row-gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 1fr 1fr 3fr 3fr 3fr;
+            height: 100vh;            
+            border: 1px solid black;
+            padding: 0px 10px;
+            overflow-y: hidden;
+        }
+
+
+        label{
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        sup{
+            color: red;
+        }
+        #NameContainer{
+            display: flex;
+            gap: 5px;
+            
+        }
+
+        #NameContainer-wrapper{
+            grid-column: 1/3;
+            grid-row: 1/2;
+           
+
+        }
+
+        #NameContainer #FN input,  #NameContainer #LN input{
+            width: 90%;
+            padding-right: 10px;
+            
+        }
+      
+
+
+        #first-container {
+            display: flex;
+            gap: 40px;
+            grid-column: 1/3;
+            grid-row: 1/2;
+        }
+
+
+        #Email-wrapper{
+            grid-column: 1/3;
+            grid-row: 2/3;
+        }
+
+        #Email-wrapper input{
+            width: 96%;
+        }
+
+        .flex-item{
+            flex-grow: 1;
+        }
+
+
+        #starRating input[type="radio"]{
+            display: none;
+            
+        }
+
+        #starRating label{
+            font-size: 20px
+        }
+
+        #Your-Exp{
+            grid-column: 1/3;
+            grid-row: 3/4;
+        }
+
+        #feedBack1{
+            grid-column: 1/4;
+            grid-row: 4/5;
+            width: 100%;
+        }
+        #feedBack1 table, #feedBack2 table{
+            width: 100%;
+            border-collapse: collapse;
+            height: 80%;
+            padding-bottom: 50px;
+        }
+
+        #feedBack1 table th,td  ,#feedBack2 table th,td{
+            text-align: center;
+        }
+
+        #feedBack1 table tr th:first-child,  #feedBack1 table tr td:first-child,
+        #feedBack2 table tr th:first-child,  #feedBack2 table tr td:first-child{
+            text-align: left;
+            text-wrap: wrap;
+            width: 20%;
+        }
+
+        #feedBack1 table tr:nth-child(even),
+        #feedBack2 table tr:nth-child(even){
+            background-color: beige;
+            
+        }
+
+
+        #feedBack2{
+            grid-column: 1/4;
+            grid-row: 5/6;
+            
+
+        }
+
+        #feedBack1 h4, #feedBack2 h4, #AdditionalComments h4{
+            margin-bottom: 8px;
+        }
+
+        #AdditionalComments{
+            grid-column: 1/4;
+            grid-row: 6/7;
+        }
+
+        #AdditionalComments textarea{
+            width: 100%;
+        }
+        
+        #FN label, #LN label{
+            font-weight: normal;
+        }
+
+
+
+
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="mainContainer">
+        <div id="NameContainer-wrapper">
+            
+            <label>Name<sup>*</sup></label>
+            <div id="NameContainer">
+                <div id="FN" class="flex-item">
+                    <input id="firstName"/>
+                    <br>
+                    <label for="firstName">First</label>
+                </div>
+                <div id="LN" class="flex-item">
+                    <input id="LN"/>
+                    <br>
+                    <label for="lastName">Last</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="Email-wrapper">
+            <label for="Email">Email<sup>*</sup></label>
+            <br/>
+            <input id="Email"/>
+        </div>
+
+        <div id="Your-Exp">
+            <label for="YE">Your Experience <sup>*</sup></label>
+            <br>
+            <div id="starRating">
+                <input type="radio" id="1-stars" name="rating" value="1" />
+                <label for="1-stars">&#9733;</label>
+                <input type="radio" id="2-stars" name="rating" value="2" />
+                <label for="2-stars">&#9733;</label>
+                <input type="radio" id="3-stars" name="rating" value="3" />
+                <label for="3-stars">&#9733;</label>
+                <input type="radio" id="4-stars" name="rating" value="4" />
+                <label for="4-stars">&#9733;</label>
+                <input type="radio" id="5-stars" name="rating" value="5" />
+                <label for="5-stars">&#9733;</label>
+                <p>Overall, how would you rate your experience with us</p>                
+            </div>
+
+        </div>
+
+        <div id="feedBack1">
+            <h4>How satisfied are you with us <sup>*</sup></h4>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Very Unsatisfied</th>
+                        <th>Unsatisfied</th>
+                        <th>Neutral</th>
+                        <th>Satisfied</th>
+                        <th>Very Satisfied</th>                    
+                    </tr>
+                    <tr>
+                        <td>Purchase</td>
+                        <td><input type="radio" id="Purchae-VUs" name="Purchae" value="1"/></td>
+                        <td><input type="radio" id="Purchae-Us" name="Purchae" value="2" ></td>
+                        <td><input type="radio" id="Purchae-N" name="Purchae" value="3"/></td>
+                        <td><input type="radio" id="Purchae-S" name="Purchae" value="4"/></td>
+                        <td><input type="radio" id="Purchae-VS" name="Purchae" value="5"/></td>
+                    </tr>
+                    <tr>
+                        <td>Service</td>
+                        <td><input type="radio" id="Service-VUs" name="Service" value="1"/></td>
+                        <td><input type="radio" id="Service-Us" name="Service" value="2" ></td>
+                        <td><input type="radio" id="Service-N" name="Service" value="3"/></td>
+                        <td><input type="radio" id="Service-S" name="Service" value="4"/></td>
+                        <td><input type="radio" id="Service-VS" name="Service" value="5"/></td>
+                    </tr>
+                    <tr>
+                        <td>Company-Overall </td>
+                        <td><input type="radio" id="Company-Overall-VUs" name="Company-Overall" value="1"/></td>
+                        <td><input type="radio" id="Company-Overall-Us" name="Company-Overall" value="2" ></td>
+                        <td><input type="radio" id="Company-Overall-N" name="Company-Overall" value="3"/></td>
+                        <td><input type="radio" id="Company-Overall-S" name="Company-Overall" value="4"/></td>
+                        <td><input type="radio" id="Company-Overall-VS" name="Company-Overall" value="5"/></td>
+                    </tr>
+                </table>
+        </div>
+
+
+
+
+
+        <div id="feedBack2">
+            <h4>How satisfied are you with us <sup>*</sup></h4>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Very Unikely</th>
+                        <th>Unikely</th>
+                        <th>Neutral</th>
+                        <th>Likely</th>
+                        <th>Very Likely</th>                    
+                    </tr>
+                    <tr>
+                        <td>Buy from us again</td>
+                        <td><input type="radio" id="buyAgain-VUl" name="buyAgain" value="1"/></td>
+                        <td><input type="radio" id="buyAgain-Ul" name="buyAgain" value="2" ></td>
+                        <td><input type="radio" id="buyAgain-N" name="buyAgain" value="3"/></td>
+                        <td><input type="radio" id="buyAgain-L" name="buyAgain" value="4"/></td>
+                        <td><input type="radio" id="buyAgain-VL" name="buyAgain" value="5"/></td>
+                    </tr>
+                    <tr>
+                        <td>Recommend our product to others Us</td>
+                        <td><input type="radio" id="recommend-VUl" name="recommend" value="1"/></td>
+                        <td><input type="radio" id="recommend-Ul" name="recommend" value="2" ></td>
+                        <td><input type="radio" id="recommend-N" name="recommend" value="3"/></td>
+                        <td><input type="radio" id="recommend-L" name="recommend" value="4"/></td>
+                        <td><input type="radio" id="recommend-VL" name="recommend" value="5"/></td>
+                    </tr>
+                    <tr>
+                        <td>Recommend our company to others</td>
+                        <td><input type="radio" id="recommend-comp-VUL" name="recommend-comp" value="1"/></td>
+                        <td><input type="radio" id="recommend-comp-Ul" name="recommend-comp" value="2" ></td>
+                        <td><input type="radio" id="recommend-comp-N" name="recommend-comp" value="3"/></td>
+                        <td><input type="radio" id="recommend-comp-L" name="recommend-comp" value="4"/></td>
+                        <td><input type="radio" id="recommend-comp-VL" name="recommend-comp" value="5"/></td>
+                    </tr>
+                </table>
+        </div>
+
+        <div id="AdditionalComments">
+            <h4>Additional comments or suggestion</h4>
+            <textarea rows="6"></textarea>
+            <button type="submit">Submit</button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
